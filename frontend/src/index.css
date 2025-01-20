@@ -78,7 +78,7 @@ header a {
 }
 
 .workout-details.completed .delete-btn {
-  color: #147a10;
+  background: #87ee87ad;
 }
 
 .workout-details h4 {
