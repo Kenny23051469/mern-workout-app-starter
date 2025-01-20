@@ -17,17 +17,20 @@ code {
 
 /* layout */
 :root {
-  --primary: #1aac83;
+  --primary: #5e5e5e;
   --error: #e7195a;
 }
+
 body {
   background: #f1f1f1;
   margin: 0;
   font-family: "Poppins";
 }
+
 header {
   background: #fff;
 }
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -36,10 +39,12 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
   color: #333;
   text-decoration: none;
 }
+
 .pages {
   max-width: 1400px;
   padding: 20px;
@@ -52,6 +57,7 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
+
 .workout-details {
   background: #fff;
   border-radius: 4px;
@@ -59,26 +65,55 @@ header a {
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #333;
 }
+
+.workout-details.completed {
+  border: 2px solid #147a10;
+  background: #87ee87ad
+}
+
+.workout-details.completed h4 {
+  color: #147a10;
+}
+
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
+
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
-.workout-details span {
+
+.action-container {
   position: absolute;
   top: 20px;
   right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.delete-btn {
   cursor: pointer;
+  color: #555;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #f1f1f1;
-  padding: 6px;
   border-radius: 50%;
-  color: #333;
+  padding: 6px; 
+}
+
+.react-switch {
+  vertical-align: middle;
 }
 
 /* new workout form */
@@ -86,6 +121,7 @@ label,
 input {
   display: block;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
@@ -95,6 +131,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 form button {
   background: var(--primary);
   border: 0;
@@ -104,6 +141,7 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
+
 div.error {
   padding: 10px;
   background: #ffefef;
@@ -111,4 +149,16 @@ div.error {
   color: var(--error);
   border-radius: 4px;
   margin: 20px 0;
+}
+
+/* Style for error fields */
+.error-field {
+  border: 1px solid red;
+}
+
+/* Optional: Style for error message */
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 10px;
 }
