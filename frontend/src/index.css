@@ -77,6 +77,10 @@ header a {
   color: #147a10;
 }
 
+.workout-details.completed .delete-btn {
+  color: #147a10;
+}
+
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
@@ -151,12 +155,10 @@ div.error {
   margin: 20px 0;
 }
 
-/* Style for error fields */
 .error-field {
   border: 1px solid red;
 }
 
-/* Optional: Style for error message */
 .error {
   color: red;
   font-size: 0.9em;
