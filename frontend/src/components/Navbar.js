@@ -14,7 +14,7 @@ function Navbar() {
             <div className="container">
                 <Link to="/">
                     <div className="Logo">
-                        <img src="../public/logo.png" alt="Workout Buddy" />
+                        <img src="/Logo.png" alt="Workout Buddy" />
                         <h1>Workout Buddy</h1>
                     </div>
                 </Link>
