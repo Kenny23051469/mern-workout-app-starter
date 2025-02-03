@@ -145,3 +145,24 @@ form.signup, form.login {
 .edit-btn {
   margin-left: 10px;
 }
+
+/* Sorting Dropdown */
+.sort-options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.sort-options select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
