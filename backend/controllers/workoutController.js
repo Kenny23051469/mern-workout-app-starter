@@ -67,22 +67,43 @@ const deleteWorkout = async (req, res) => {
 };
 
 // Update a workout
+// Update a workout
 const updateWorkout = async (req, res) => {
   const { id } = req.params;
+
+  // Check if the ID is valid
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).json({ error: "Invalid ID" });
   }
-  const workout = await Workout.findOneAndUpdate(
-    { _id: id },
-    {
-      ...req.body,
-    }
-  );
-  if (!workout) {
-    return res.status(400).json({ error: "Workout not found" });
+
+  // Check if the fields are provided in the request body
+  const { title, reps, load } = req.body;
+
+  // Validate that at least one field is provided
+  if (!title && !reps && !load) {
+    return res.status(400).json({ error: "At least one field (title, reps, load) is required for update" });
   }
-  res.status(200).json(workout);
+
+  try {
+    // Perform the update
+    const workout = await Workout.findOneAndUpdate(
+      { _id: id },
+      { title, reps, load }, // Only updating the fields provided
+      { new: true } // Ensure the updated workout is returned
+    );
+
+    if (!workout) {
+      return res.status(404).json({ error: "Workout not found" });
+    }
+
+    // Return the updated workout
+    res.status(200).json(workout);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
 };
+
 
 module.exports = {
   getWorkouts,

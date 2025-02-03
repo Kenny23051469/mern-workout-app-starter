@@ -3,17 +3,20 @@ import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 function Navbar() {
-    const {logout} = useLogout();
-    const {user} = useAuthContext();
+    const { logout } = useLogout();
+    const { user } = useAuthContext();
 
     const handleClick = () => {
         logout();
     }
-    return(
+    return (
         <header>
             <div className="container">
                 <Link to="/">
-                    <h1>Workout Buddy</h1>
+                    <div className="Logo">
+                        <img src="/logo.png" alt="Workout Buddy" />
+                        <h1>Workout Buddy</h1>
+                    </div>
                 </Link>
                 <nav>
                     {user && (
@@ -22,7 +25,7 @@ function Navbar() {
                             <button onClick={handleClick}>Log Out</button>
                         </div>
                     )}
-                    { !user && (
+                    {!user && (
                         <div>
                             <Link to="/login">Login</Link>
                             <Link to="/signup">Signup</Link>

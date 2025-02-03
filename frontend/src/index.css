@@ -3,7 +3,7 @@
 
 /* layout */
 :root {
-  --primary: #1aac83;
+  --primary: #4d4d4d;
   --error: #e7195a;
 }
 body {
@@ -80,7 +80,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
-form button {
+button {
   background: var(--primary);
   border: 0;
   color: #fff;
@@ -128,4 +128,20 @@ form.signup, form.login {
   padding: 20px;
   background: #fff;
   border-radius: 4px;
+}
+
+.Logo {
+  display: flex;
+  align-items: center;
+}
+.Logo img {
+  max-height: 80px;
+  margin-right: 20px;
+}
+.Logo h1 {
+  font-size: 1.5em;
+}
+
+.edit-btn {
+  margin-left: 10px;
 }
